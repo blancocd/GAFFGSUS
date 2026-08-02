@@ -27,6 +27,8 @@ This thesis enables feed-forward Gaussian splatting models to achieve geometrica
 - **Edge-aware normal consistency loss**: Feed-forward splatting models allocate primitives equally across the scene decreasing the detail of normal consistency maps. We propose and edge-aware loss variant and succesfully steer the encoder to predict smoother surfaces despite the ambiguous normal renderings.
 - **Fine-tuning of feed-forward models on new losses and decoders.**: Starting from an encoder trained with the gsplat decoder and photometric losses, we present a strategy to fine-tune it using the Gaussian Opacity Fields and Geometry-Grounded Gaussian Splatting decoders, alongside our edge-aware normal consistency loss.
 
+The thesis also proposes a triangle encoder based on the DepthSplat architecture. Its repository is [here](https://github.com/blancocd/Master-Thesis-Triangle-Encoder).
+
 
 ## Installation
 
