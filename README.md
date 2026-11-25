@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">Master's Thesis: Geometrically Accurate Feed‐Forward Gaussian Splatting for Unbounded Scenes</h1>
+  <h1 align="center">Geometrically Accurate Feed‐Forward Gaussian Splatting for Unbounded Scenes</h1>
   <p align="center">
     <a href="https://blancocd.com/">César Díaz Blanco</a>
   </p>
