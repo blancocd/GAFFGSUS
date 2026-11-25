@@ -1,34 +1,33 @@
 <p align="center">
-  <h1 align="center">Geometrically Accurate Feed‐Forward Gaussian Splatting for Unbounded Scenes</h1>
+  <h1 align="center">Geometrically Accurate Feed-Forward Gaussian Splatting for Unbounded Scenes</h1>
   <p align="center">
-    <a href="https://blancocd.com/">César Díaz Blanco</a>
+    <a href="https://blancocd.com/">César Díaz Blanco</a><sup>1</sup>
+    &middot;
+    <a href="https://niujinshuchong.github.io/">Zehao Yu</a><sup>1,2</sup>
+    &middot;
+    <a href="https://haofeixu.github.io/">Haofei Xu</a><sup>3,4</sup>
+    &middot;
+    <a href="https://www.cvlibs.net/">Andreas Geiger</a><sup>1,2,3</sup>
   </p>
   <p align="center">
-    Supervisors: 
-    <a href="https://niujinshuchong.github.io/">Zehao Yu</a>
-    &middot;
-    <a href="https://haofeixu.github.io/">Haofei Xu</a>
-  </p>
-  <p align="center">
-    Examiners:
-    <a href="https://www.cvlibs.net/">Andreas Geiger</a>
-    &middot;
-    <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">Gerard Pons-Moll</a>
+    <sup>1</sup>University of Tübingen &nbsp;
+    <sup>2</sup>Tübingen AI Center &nbsp;
+    <sup>3</sup>KE:SAI &nbsp;
+    <sup>4</sup>ETH Zurich
   </p>
   <h3 align="center">
-    <a href="https://blancocd.com/ThesisWeb/MasterThesisCesarDiazBlanco_large.pdf">Thesis</a> | <a href="https://blancocd.com/ThesisWeb/">Project Page</a> | <a href="MODEL_ZOO.md">Model Zoo</a>
+    <a href="https://arxiv.org/abs/XXXX.XXXXX">Paper</a> | <a href="https://blancocd.com/ThesisWeb/">Project Page</a> | <a href="MODEL_ZOO.md">Model Zoo</a>
   </h3>
 </p>
 
-This thesis enables feed-forward Gaussian splatting models to achieve geometrically accurate 3D representations of unbounded scenes. Our method performs on par with costly per-scene optimization and surpasses state-of-the-art depth estimation models.
+We enable feed-forward Gaussian splatting models to predict geometrically accurate 3D representations of unbounded outdoor scenes from sparse-view images. Our method achieves state-of-the-art mesh accuracy among feed-forward methods, is competitive with costly per-scene optimization while being orders of magnitude faster, and surpasses state-of-the-art depth estimation models.
 
 **Contributions:**
-- **3D Smoothing Filter for feed-forward Gaussian splatting**: Current models ignore the spatial extent of predicted Gaussians, leading to unstable training. Applying a 3D filter to the predicted Gaussians prevents them from exceeding the Nyquist frequency and resolves numerical instabilities during training.
-- **Edge-aware normal consistency loss**: Feed-forward splatting models allocate primitives equally across the scene decreasing the detail of normal consistency maps. We propose and edge-aware loss variant and succesfully steer the encoder to predict smoother surfaces despite the ambiguous normal renderings.
-- **Fine-tuning of feed-forward models on new losses and decoders.**: Starting from an encoder trained with the gsplat decoder and photometric losses, we present a strategy to fine-tune it using the Gaussian Opacity Fields and Geometry-Grounded Gaussian Splatting decoders, alongside our edge-aware normal consistency loss.
+- **Edge-aware normal consistency loss**: Feed-forward splatting models allocate primitives equally across the scene, which decreases the detail of rendered normal maps. We propose an edge-aware variant of the normal consistency loss that successfully steers the encoder to predict Gaussians lying flat on smooth surfaces.
+- **3D smoothing filter for feed-forward Gaussian splatting**: Current models ignore the spatial extent of predicted Gaussians, leading to unstable training. Applying a 3D filter to the predicted Gaussians prevents them from exceeding the Nyquist frequency, resolves numerical instabilities during training, and improves rendering quality at higher resolutions.
+- **Robust fine-tuning on new losses and decoders**: Starting from an encoder trained with the gsplat decoder and photometric losses, we present a strategy to fine-tune it with the Gaussian Opacity Fields and Geometry-Grounded Gaussian Splatting decoders, alongside our edge-aware normal consistency loss.
 
-The thesis also proposes a triangle encoder based on the DepthSplat architecture. Its repository is [here](https://github.com/blancocd/Master-Thesis-Triangle-Encoder).
-
+This work extends the first author's [Master's thesis](https://blancocd.com/ThesisWeb/MasterThesisCesarDiazBlanco_large.pdf), which also explores a triangle encoder based on the DepthSplat architecture ([repository](https://github.com/blancocd/Master-Thesis-Triangle-Encoder)).
 
 ## Installation
 
@@ -119,6 +118,19 @@ The training scripts in [scripts/](scripts) contain the exact commands and hyper
 ## Evaluation
 
 Evaluation scripts are also provided in [scripts/](scripts) for reproducing the results in our paper.
+
+## Citation
+
+If you find this work useful, please consider citing:
+
+```bibtex
+@article{diazblanco2026geometrically,
+  title   = {Geometrically Accurate Feed-Forward Gaussian Splatting for Unbounded Scenes},
+  author  = {D{\'i}az Blanco, C{\'e}sar and Yu, Zehao and Xu, Haofei and Geiger, Andreas},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}
+```
 
 ## Acknowledgements
 
